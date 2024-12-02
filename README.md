@@ -39,6 +39,16 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+Adding JSON Server
+In this project, we are using JSON Server to simulate a backend.
+
+To start the JSON Server, use the following command:
+
+bash
+Copiar código
+json-server --watch src/db/db.json --port 5002
+This will start a server that listens on port 5002 and watches for changes in src/db/db.json to simulate API responses.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
