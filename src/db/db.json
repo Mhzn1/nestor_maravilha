@@ -1,0 +1,25 @@
+{
+  "clientes": [
+    {
+      "id": "9b49",
+      "nome": "Microsys",
+      "situacao": "ATIVO",
+      "tipo": "JURIDICA",
+      "cpf": "",
+      "cnpj": "86910502000175",
+      "endereco": "Maravilha"
+    }
+  ],
+  "produtos": [
+    {
+      "id": "70b7",
+      "nome": "Produto A",
+      "descricao": "Descrição do produto A",
+      "unidade": "UND",
+      "preco": 10,
+      "situacao": "ATIVO"
+    }
+  ],
+  "pedidos": [],
+  "itens_pedido": []
+}
