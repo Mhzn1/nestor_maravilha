@@ -1,56 +1,81 @@
-# Getting Started with Create React App
+Como Configurar e Usar o Projeto com React e JSON Server
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto foi criado com o Create React App e usa o JSON Server para simular uma API de backend local. Abaixo estão todos os passos necessários para rodar o projeto, configurar o ambiente e iniciar o servidor.
 
-## Available Scripts
+1. Instalar o Node.js:  
+   Certifique-se de ter o Node.js instalado no seu computador. Caso não tenha, faça o download e instale a versão mais recente do Node.js através do link: https://nodejs.org/.
 
-In the project directory, you can run:
+2. Clonar o Repositório:  
+   Se você ainda não tem o repositório localmente, clone o projeto com o seguinte comando:
 
-### `npm start`
+   git clone https://github.com/Mhzn1/nestor_maravilha.git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Instalar Dependências:  
+   Navegue até o diretório do projeto e instale as dependências necessárias com o comando:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+   npm install
 
-### `npm test`
+4. Rodar o Projeto React:  
+   Para rodar a aplicação em modo de desenvolvimento, use o comando:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   npm start
 
-### `npm run build`
+   Após isso, o projeto estará disponível em http://localhost:3000.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Instalar o JSON Server:  
+   Este projeto usa o JSON Server para simular uma API local. Para instalar o JSON Server globalmente, use o seguinte comando:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   npm install -g json-server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. Criar o Arquivo `db.json`:  
+   Dentro do diretório do seu projeto, crie uma pasta chamada `src/db` e, dentro dela, crie o arquivo `db.json` com o seguinte conteúdo:
 
-### `npm run eject`
+   {
+  "clientes": [
+    {
+      "id": "9b49",
+      "nome": "Microsys",
+      "situacao": "ATIVO",
+      "tipo": "JURIDICA",
+      "cpf": "",
+      "cnpj": "86910502000175",
+      "endereco": "Maravilha"
+    }
+  ],
+  "produtos": [
+    {
+      "id": "70b7",
+      "nome": "Produto A",
+      "descricao": "Descrição do produto A",
+      "unidade": "UND",
+      "preco": 10,
+      "situacao": "ATIVO"
+    }
+  ],
+  "pedidos": [],
+  "itens_pedido": []
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+7. Iniciar o JSON Server:  
+   Para iniciar o servidor do JSON Server, use o seguinte comando:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   json-server --watch src/db/db.json --port 5002
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   Isso irá fazer com que o JSON Server fique observando o arquivo `db.json` e crie um servidor API local na porta 5002. Agora você pode acessar a API em http://localhost:5002.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+8. Conectar o Frontend com a API:  
+   No seu código React, você pode fazer requisições para o JSON Server.
 
-Adding JSON Server
-In this project, we are using JSON Server to simulate a backend.
+9. Comandos do Create React App:  
+   Além dos passos acima, o Create React App oferece outros comandos úteis para o desenvolvimento. Alguns dos comandos disponíveis são:
 
-To start the JSON Server, use the following command:
+   - `npm start`: Roda o app em modo de desenvolvimento.
+   - `npm test`: Executa os testes do projeto.
+   - `npm run build`: Cria uma versão otimizada do projeto para produção.
+   - `npm run eject`: Ejetar a configuração do Create React App (não recomendado a menos que tenha certeza).
 
-bash
-Copiar código
-json-server --watch src/db/db.json --port 5002
-This will start a server that listens on port 5002 and watches for changes in src/db/db.json to simulate API responses.
+10. Para mais informações:  
+    - Para aprender mais sobre o Create React App, consulte a documentação oficial em https://reactjs.org/docs/getting-started.html.
+    - Para aprender mais sobre o JSON Server, consulte a documentação em https://github.com/typicode/json-server.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Com isso, você terá o ambiente completo configurado, tanto o frontend em React quanto o backend simulado com JSON Server, prontos para serem utilizados no seu projeto.
